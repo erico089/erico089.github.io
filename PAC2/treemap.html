@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TREEMAP</title>
+    <link rel="stylesheet" href="treemap.css">
+</head>
+<body>
+    <!-- Título principal -->
+    <header>
+        <h1>TREEMAP</h1>
+    </header>
+
+    <!-- Sección de imagen (ahora muy grande) -->
+    <section class="image-section">
+        <img src="treemap.png" alt="Treemap" class="treemap-image">
+    </section>
+
+    <!-- Sección Bibliografía (ahora antes del código) -->
+    <section class="bibliografia-section">
+        <h2>BIBLIOGRAFÍA</h2>
+        <ul class="bibliografia-links">
+            <li>
+                <strong>Per extreure informació sobre el treemap:</strong><br>
+                <a href="https://www.tableau.com/chart/what-is-treemap" target="_blank">https://www.tableau.com/chart/what-is-treemap</a>
+            </li>
+            <li>
+                <strong>Dades utilitzades:</strong><br>
+                <a href="https://data.un.org/Data.aspx?d=GHG&f=seriesID%3aCH4" target="_blank">https://data.un.org/Data.aspx?d=GHG&f=seriesID%3aCH4</a>
+            </li>
+            <li>
+                <strong>Com a suport per crear el codi:</strong><br>
+                <a href="https://python-graph-gallery.com/treemap" target="_blank">https://python-graph-gallery.com/treemap</a>
+                <div><a href="https://chat.openai.com" target="_blank">ChatGPT</a></div>
+            </li>
+        </ul>
+    </section>    
+
+    <!-- Sección CODI con el código alineado a la derecha -->
+    <section class="codi-section">
+        <h2>CODI</h2>
+        <div class="codi-content">
+            <!-- Aquí va el código Python que solo se mostrará como texto -->
+            <pre>
+xml_file = "data.xml"
+tree = ET.parse(xml_file)
+root = tree.getroot()
+
+countries = []
+emissions = []
+
+for record in root.findall(".//record"):
+    year = record.find(".//field[@name='Year']").text
+    if year == "2020":
+        country = record.find(".//field[@name='Country or Area']").text
+        value = float(record.find(".//field[@name='Value']").text)
+        
+        countries.append(country)
+        emissions.append(value)
+
+df = pd.DataFrame({'Country': countries, 'CO2_Emissions': emissions})
+
+threshold = df['CO2_Emissions'].quantile(0.3) 
+
+df['Country'] = np.where(df['CO2_Emissions'] < threshold, 'Other', df['Country'])
+df_grouped = df.groupby('Country', as_index=False).sum()  
+
+norm = plt.Normalize(vmin=min(df_grouped['CO2_Emissions']), vmax=max(df_grouped['CO2_Emissions']))
+cmap = plt.cm.RdYlGn  
+
+plt.figure(figsize=(22, 14)) 
+
+ax = squarify.plot(sizes=df_grouped['CO2_Emissions'], label=df_grouped['Country'], alpha=.8,
+                color=cmap(norm(df_grouped['CO2_Emissions'])), edgecolor='white')
+
+for i in range(len(df_grouped)):
+    x, y, dx, dy = ax.patches[i].get_bbox().bounds 
+    x_center = x + dx / 2
+    y_center = y + dy / 2
+    country = df_grouped['Country'].iloc[i]
+    
+    if country == "Other":
+        plt.text(x_center, y_center, "Other", fontsize=8, ha='center', va='center')
+    else:
+        plt.text(x_center, y_center, country, fontsize=10, ha='center', va='center')
+
+plt.axis('off')
+plt.title("CO₂ Emissions by Country (2020)", fontsize=20)
+plt.show()
+            </pre>
+        </div>
+    </section>
+</body>
+</html>

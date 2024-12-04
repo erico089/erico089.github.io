@@ -1,0 +1,7 @@
+.color1 {color: #e76934;}
+.color2 {color: #e6972c;}
+.color3 {color: #efcf66;}
+.color4 {color: #f6edaa;}
+.color5 {color: #f8efdc;}
+
+https://www.twobecom.com/free-hotel-png-clipart-vector-clipart-psd-peoplepngcom-free-hotel-png-492_369/

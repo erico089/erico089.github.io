@@ -1,0 +1,163 @@
+/* Margen global del contenido */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  line-height: 1.6;
+}
+
+
+.main-wrapper {
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 2rem 0;
+}
+
+/* Estilos para el encabezado */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+  background-color: #2a2e32;
+  color: white;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+/* Estilos para el encabezado */
+.sub-header {
+  text-align: center;
+  margin-top: 15rem;
+  margin-bottom: 5rem;
+  padding: 1rem; /* Reducir el padding para que sea más estrecho */
+  background-color: #52616f;
+  color: white;
+  border-radius: 5px;
+  margin-left: auto; /* Centra el div horizontalmente */
+  margin-right: auto; /* Centra el div horizontalmente */
+  font-size: 0.7rem;
+}
+
+
+header h1 {
+  margin: 0;
+}
+
+header p {
+  margin: 0.5rem 0 0;
+}
+
+/* Bloques de introducción */
+#intro-blocks {
+  display: flex;
+  justify-content: space-between; /* Asegura que los bloques estén distribuidos */
+  gap: 2rem; /* Espacio entre los bloques */
+  width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho disponible */
+}
+
+.intro-block {
+  padding: 1.5rem;
+  border: 0px solid #ccc;
+  border-radius: 5px;
+  display: inline-block; /* Asegura que los bloques se mantengan en la misma línea */
+}
+
+.pie-chart {
+  padding: 0.9rem;
+  width: 20%; /* Ajusta el tamaño para que ambos bloques quepan en la misma línea */
+  vertical-align: top;
+}
+
+.line-chart {
+  padding: 0.9rem;
+  width: 55%; /* Ajusta el tamaño para que ambos bloques quepan en la misma línea */
+}
+
+.portugal-cancel-chart {
+  padding: 0.9rem;
+  width: 80%; 
+}
+
+.portugal-cancel-chart-text {
+  padding: 0.9rem;
+  vertical-align: top;
+  width: 15%; 
+}
+
+.line-chart-text {
+  padding: 0.9rem;
+  vertical-align: top;
+  width: 15%;
+}
+
+.intro-block h2 {
+  margin-bottom: 1rem;
+  color: #2a2e32;
+}
+
+.intro-block p {
+  color: #333;
+  line-height: 1.5;
+}
+
+.poblation-chart {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+}
+
+.poblation-chart-text {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 1.5rem;
+}
+/* Estilos para el pie de página */
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #2a2e32;
+  color: white;
+  border-radius: 5px;
+}
+
+.analysis-container {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fdfdfd;
+}
+
+.analysis-container h2 {
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.analysis-container p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.analysis-container .highlight {
+  color: #e76934;
+  font-weight: bold;
+}
+
+.analysis-container ul {
+  margin-top: 10px;
+  padding-left: 20px;
+  color: #555;
+  font-size: 16px;
+}
+
+.analysis-container ul li {
+  margin-bottom: 5px;
+}
+
+.conclusio-final-text {
+  margin: 8rem;
+  text-align: center;
+}

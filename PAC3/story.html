@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorant les Cancel·lacions Hoteleres</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="main-wrapper">
+    <header>
+      <h1>Explorant les Cancel·lacions Hoteleres a Portugal (2015-2017)</h1>
+      <p>Una narrativa visual interactiva basada en dades reals.</p>
+    </header>
+    <div id="intro-blocks">
+      <div class="intro-block r" style="margin-top: 4rem;">
+        <h2>Exploració de les Cancel·lacions Hoteleres a Portugal</h2>
+        <p>Com a usuaris indirectes, sovint podem pensar que les cancel·lacions en viatges són un problema menor o gairebé inexistent. No obstant això, en el sector hoteler, les cancel·lacions tenen un impacte significatiu. En aquesta visualització, explorarem dades recollides de dos datasets amb més de 120.000 observacions i 31 variables sobre l'hostaleria, abastant el període des del juliol de 2015 fins al 31 d'agost de 2017. L'objectiu és oferir una visió més profunda sobre com les cancel·lacions afecten tant els clients com els propietaris d'hotels a Portugal.</p>
+
+        <p>A través d'aquestes visualitzacions, els usuaris podran conèixer els factors que influeixen en les cancel·lacions, com el temps d'antelació de la reserva, el tipus de dipòsit, les cancel·lacions anteriors, entre d'altres. Tant per als clients com per als propietaris, aquestes dades proporcionen informació valuosa per a una millor comprensió de les tendències en les cancel·lacions i la seva gestió.</p>
+        </div>
+      <div class="intro-block l">
+        <img src="./hotel.png">
+        <h2>Hotel Booking Demand Datasets</a></h2>
+        <p>El dataset que utilitzarem per a la visualització està extret de l'estudi <a href="https://www.sciencedirect.com/science/article/pii/S2352340918315191" target="_blank">Hotel Booking Demand Datasets</a>. Aquest conjunt de dades es compon de dos datasets que recopilen informació sobre la demanda de reserves d'hotels, i les dades han estat prèviament validades per a la seva utilització en investigació.</p>
+        </div>
+    </div>
+    <div class="sub-header">
+      <h1>¿Realment existeixen tantes cancel·lacions?</h1>
+    </div>
+    <div class="intro-block pie-chart">
+      <div class="flourish-embed" data-src="story/2751232"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/story/2751232/thumbnail" width="100%" alt="visualization" /></noscript></div> 
+      <p>En la següent figura, podem observar que un <strong style="font-size: 21px;">37% de les reserves són cancel·lades</strong>, el que equival a unes 44.000 reserves cancel·lades en termes absoluts.</p>
+    </div>
+    <div class="intro-block line-chart">
+      <div class="flourish-embed" data-src="story/2751248"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/story/2751248/thumbnail" width="100%" alt="visualization" /></noscript></div>    
+    </div>
+    <div class="intro-block line-chart-text">
+      <p>Com es pot observar al gràfic de línies de l'esquerra, el valor de cancel·lacions ha millorat molt respecte al nombre de reserves des de 2015 fins al 2017. Per a ser mes precisos, <span style="font-size: 21px; font-weight: bold;">al 2015 aproximadament meitat de reserves eren cancelades</span>. Però, tot i que la proporció ha millorat notablement, segueix sent un problema, amb <span style="font-size: 21px; font-weight: bold;">1800 cancel·lacions</span> a l'octubre de 2017.</p>
+    </div>
+    <div class="sub-header">
+      <h1>Explorem les cancel·lacions per paisos de procedencia</h1>
+    </div>
+    <div class="poblation-chart">
+      <div class="flourish-embed" data-src="story/2755945"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/story/2755945/thumbnail" width="100%" alt="visualization" /></noscript></div>
+    </div>
+    <div class="poblation-chart-text">
+      <p>Com podem observar, <span style="font-weight: bold;">Portugal, Gran Bretanya, França i Espanya</span> són les procedències de la majoria de clients. I, com tindria sentit, el <span style="font-weight: bold;">nombre de cancel·lacions per procedència de client</span> segueix la mateixa tendència per la majoria de països, a excepció del propi <span style="font-weight: bold;">Portugal</span>. Podem veure que en aquest país trobem la <span style="font-weight: bold;">gran majoria de cancel·lacions</span>, sobretot en comparativa respecte al <span style="font-weight: bold;">nombre de reserves</span>. És per això que ens fixarem en aquest problema i intentarem abordar-lo centrant-nos en el país més problemàtic en aquest aspecte, <span style="font-weight: bold;">Portugal</span>.</p>
+    </div>
+    <div class="sub-header">
+      <h1>Portugal cancelacions?</h1>
+    </div>
+    
+    <div class="intro-block portugal-cancel-chart">
+      <div class="flourish-embed" data-src="story/2755985"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/story/2755985/thumbnail" width="100%" alt="visualization" /></noscript></div>
+    </div>
+    <div class="intro-block portugal-cancel-chart-text">
+      <p>
+        Podem observar directament les comparacions entre <span style="font-weight: bold;">reserves i cancel·lacions</span>, i veiem com la majoria de mesos hi ha més cancel·lacions que reserves. Inclús arribant al punt de <span style="font-weight: bold;">maig i juny del 2017</span>, on trobem un <span style="font-weight: bold; ">71%</span> i <span style="font-weight: bold; ">69%</span> de cancel·lacions respectivament.  
+        Evidentment, aquests números són preocupants, i com podem observar al gràfic, es veu reflectit que no es dirigeix cap a una millora parlant de la <span style="font-weight: bold;">taxa de cancel·lacions</span>.  
+        També podem observar que el número de reserves en general ha baixat, i probablement té a veure amb aquest elevat nombre de cancel·lacions i la <span style="font-weight: bold;">satisfacció dels usuaris</span>.
+      </p>
+    </div>
+
+    <div class="sub-header">
+      <h1>Quines altres variables afecten a les cancel·lacions dels portugesos</h1>
+    </div>
+
+    <div class="flourish-embed" data-src="story/2756062"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/story/2756062/thumbnail" width="100%" alt="visualization" /></noscript></div>
+    <div>
+      <h2>Cancel·lacions Anteriors x Probabilitat de Cancel·lació</h2>
+      <p>
+        En aquest gràfic, podem observar les cancel·lacions prèvies d'un client i la seva 
+        <strong>probabilitat de tornar a cancel·lar</strong>. Destaquen algunes observacions clau: 
+        els clients <span class="highlight">sense cancel·lacions prèvies</span> tenen una 
+        probabilitat del <strong>52%</strong> de cancel·lar, mentre que aquells amb una 
+        <span class="highlight">sola cancel·lació prèvia</span> arriben a un alarmant <strong>95%</strong>. 
+        A partir de <span class="highlight">dues cancel·lacions</span>, la probabilitat es redueix notablement fins al 
+        <strong>30%</strong>, però en casos extrems, com els clients amb <strong>13 cancel·lacions</strong> prèvies, 
+        la taxa torna al <strong>100%</strong>.
+      </p>
+      <p>
+        Aquestes dades indiquen que la <span class="highlight">primera cancel·lació</span> és crítica per al comportament futur 
+        del client i que pot provocar una desconnexió amb l’hotel o una pèrdua de confiança. Així mateix, casos 
+        recurrents i extrems mereixen una revisió profunda, ja que podrien estar relacionats amb 
+        <strong>fallades en la gestió de reserves</strong> o abusos en les polítiques actuals.
+      </p>
+      <h3>Idees de millora:</h3>
+      <ul>
+        <li>Implementar <strong>programes de seguiment post-cancel·lació</strong> per reforçar la confiança del client.</li>
+        <li>Introduir <strong>incentius per complir amb futures reserves</strong> després d’una cancel·lació inicial.</li>
+        <li>Crear <strong>controls o limitacions</strong> per a clients amb un historial altament problemàtic.</li>
+      </ul>
+    </div>
+    <div class="flourish-embed" data-src="story/2756066"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/story/2756066/thumbnail" width="100%" alt="visualization" /></noscript></div>
+    <div>
+      <h2>Canvis en la Reserva x Probabilitat de Cancel·lació</h2>
+      <p>
+        En aquesta visualització, podem veure la relació entre el nombre de <strong>canvis en una reserva</strong> i la 
+        <strong>probabilitat que aquesta sigui cancel·lada</strong>. Curiosament, els clients que no fan cap canvi tenen 
+        una alta probabilitat de cancel·lació (<span class="highlight">60%</span>), mentre que aquells que fan un canvi 
+        redueixen la probabilitat al <strong>24%</strong>. A mesura que augmenta el nombre de canvis, la probabilitat de 
+        cancel·lació segueix baixant.
+      </p>
+      <p>
+        Aquest comportament suggereix que els clients que fan canvis estan més <strong>compromesos amb la seva reserva</strong>, 
+        utilitzant la flexibilitat per adaptar-se a les seves necessitats. D'altra banda, els clients que no fan cap canvi 
+        podrien no tenir intenció inicial de completar la reserva, fet que subratlla la importància de la 
+        <strong>comunicació proactiva</strong> per garantir el seu compromís.
+      </p>
+      <h3>Idees de millora:</h3>
+      <ul>
+        <li>Fomentar <strong>polítiques flexibles de canvi</strong> per reduir les cancel·lacions.</li>
+        <li>Implementar <strong>campanyes de seguiment</strong> per clients sense canvis, oferint recordatoris o incentius per mantenir la reserva.</li>
+        <li>Recompensar clients que <strong>optin per ajustar les reserves</strong> en lloc de cancel·lar-les, mitjançant promocions o avantatges exclusius.</li>
+      </ul>
+    </div>
+    <div class="sub-header">
+      <h1>Conclusió</h1>
+    </div>
+    <div class="conclusion-container">
+      <p>
+        Les dades analitzades revelen l'alt impacte de les cancel·lacions hoteleres, especialment a Portugal, amb factors 
+        com el comportament del client i la flexibilitat de les reserves jugant un paper crític. Tot i una millora en la 
+        proporció de cancel·lacions al llarg dels anys, segueixen sent un problema rellevant que afecta tant la confiança dels clients 
+        com els resultats dels hotels.
+      </p>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="flex: 1; text-align: left; margin-left: 5rem;">
+          <p>Això ens porta a qüestions clau:</p>
+          <p><span style="font-size: 18px; font-weight: bold;">Com es poden dissenyar polítiques més efectives per reduir les cancel·lacions?</span></p>
+          <p><span style="font-size: 18px; font-weight: bold;">Com es pot recuperar la confiança dels clients que cancel·len freqüentment?</span></p> 
+          <p><span style="font-size: 18px; font-weight: bold;">Quines millores podem aplicar per fomentar i facilitar els canvis d'una reserva?</span></p> 
+          <p><span style="font-size: 18px; font-weight: bold;">Què podem aprendre d'altres mercats amb taxes de cancel·lació més baixes?</span></p>
+        </div>
+        <div style="flex-shrink: 0;">
+          <img src="./hotel.png" alt="Hotel" style="max-width: 100%; height: auto; margin-right: 5rem;">
+        </div>
+      </div>
+      
+      <div class="conclusio-final-text">
+        <p><span style="font-size: 26px;">La solució depèn d'accions conjuntes entre hotels, clients i noves eines tecnològiques. <span style="font-size: 26px; font-weight: bold;">Què hi farieu vosaltres?</span></span></p>
+      </div>
+    </div>    
+
+    <h1 style="margin-top: 20rem;">Bibliografia i eines utilitzades</h1>
+    <ul>
+      <li><strong>Recursos d'aprenentatge d'Anàlisi Visual i Storytelling</strong></li>
+      <li><strong>RStudio</strong> - Per neteja del dataset</li>
+      <li><strong>Flourish Studio</strong> - Per creació de gràfics</li>
+      <li><strong>ChatGPT</strong> - Suport per codificació de la pàgina web</li>
+    </ul>
+
+    
+    <p style="margin-top: 5rem;">&copy; 2024 Exploració de Dades Hoteleres</p>
+    </footer>
+  </div>
+</body>
+</html>

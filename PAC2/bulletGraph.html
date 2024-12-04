@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BULLET GRAPH</title>
+    <link rel="stylesheet" href="treemap.css">
+</head>
+<body>
+    <!-- Título principal -->
+    <header>
+        <h1>BULLET GRAPH</h1>
+    </header>
+
+    <!-- Sección de imagen (ahora muy grande) -->
+    <section class="image-section">
+        <img src="bullet.png" alt="BulletGraph" class="bulletGrpah-image">
+    </section>
+
+    <!-- Sección Bibliografía (ahora antes del código) -->
+    <section class="bibliografia-section">
+        <h2>BIBLIOGRAFÍA</h2>
+        <ul class="bibliografia-links">
+            <li>
+                <strong>Per extreure informació sobre els bullet graphs:</strong><br>
+                <a href="https://www.tableau.com/chart/what-is-bullet-graph" target="_blank">https://www.tableau.com/chart/what-is-bullet-graph</a>
+            </li>
+            <li>
+                <strong>Dades utilitzades:</strong><br>
+                <a href="https://archive.ics.uci.edu/dataset/830/visegrad+group+companies+data-2" target="_blank">https://archive.ics.uci.edu/dataset/830/visegrad+group+companies+data-2</a>
+            </li>
+            <li>
+                <strong>Com a suport per crear el codi:</strong><br>
+                <a href="https://pbpython.com/bullet-graph.html" target="_blank">https://pbpython.com/bullet-graph.html</a>
+                <div><a href="https://chat.openai.com" target="_blank">ChatGPT</a></div>
+            </li>
+        </ul>
+    </section> 
+
+    <!-- Sección CODI con el código alineado a la derecha -->
+    <section class="codi-section">
+        <h2>CODI</h2>
+        <div class="codi-content">
+            <!-- Aquí va el código Python que solo se mostrará como texto -->
+            <pre>
+def bulletgraph(data=None, limits=None, labels=None, axis_label=None, title=None,
+size=(5, 3), palette=None, formatter=None, target_color="gray",
+bar_color="black", label_color="gray"):
+    """ Build out a bullet graph image
+        Args:
+            data = List of labels, measures and targets
+            limits = list of range valules
+            labels = list of descriptions of the limit ranges
+            axis_label = string describing x axis
+            title = string title of plot
+            size = tuple for plot size
+            palette = a seaborn palette
+            formatter = matplotlib formatter object for x axis
+            target_color = color string for the target line
+            bar_color = color string for the small bar
+            label_color = color string for the limit label text
+        Returns:
+            a matplotlib figure
+    """
+    h = limits[-1] / 10
+
+    if palette is None:
+        palette = sns.light_palette("green", len(limits), reverse=False)
+
+    if len(data) == 1:
+        fig, ax = plt.subplots(figsize=size, sharex=True)
+    else:
+        fig, axarr = plt.subplots(len(data), figsize=size, sharex=True)
+
+    for idx, item in enumerate(data):
+
+        if len(data) > 1:
+            ax = axarr[idx]
+
+        ax.set_aspect('equal')
+        ax.set_yticklabels([item[0]])
+        ax.set_yticks([1])
+        ax.spines['bottom'].set_visible(False)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['left'].set_visible(False)
+
+        prev_limit = 0
+        for idx2, lim in enumerate(limits):
+
+            ax.barh([1], lim - prev_limit, left=prev_limit, height=h,
+                    color=palette[idx2])
+            prev_limit = lim
+        rects = ax.patches
+
+        ax.barh([1], item[1], height=(h / 3), color=bar_color)
+
+        ymin, ymax = ax.get_ylim()
+        ax.vlines(
+            item[2], ymin * .9, ymax * .9, linewidth=1.5, color=target_color)
+
+    if labels is not None:
+        for rect, label in zip(rects, labels):
+            height = rect.get_height()
+            ax.text(
+                rect.get_x() + rect.get_width() / 2,
+                -height * 1.2,  
+                label,
+                ha='center',
+                va='bottom',
+                color=label_color)
+    if formatter:
+        ax.xaxis.set_major_formatter(formatter)
+    if axis_label:
+        ax.set_xlabel(axis_label)
+    if title:
+        fig.suptitle(title, fontsize=14)
+    fig.subplots_adjust(hspace=0)
+            </pre>
+        </div>
+    </section>
+</body>
+</html>

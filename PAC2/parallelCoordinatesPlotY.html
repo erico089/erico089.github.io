@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARALLEL COORDINATES PLOT Y</title>
+    <link rel="stylesheet" href="treemap.css">
+</head>
+<body>
+    <!-- Título principal -->
+    <header>
+        <h1>PARALLEL COORDINATES PLOT Y</h1>
+    </header>
+
+    <!-- Sección de imagen (ahora muy grande) -->
+    <section class="image-section">
+        <img src="coordinates.png" alt="ParallelCoordinatesPlotY" class="parallel-coordinates-image">
+    </section>
+
+    <!-- Sección Bibliografía (ahora antes del código) -->
+    <section class="bibliografia-section">
+        <h2>BIBLIOGRAFÍA</h2>
+        <ul class="bibliografia-links">
+            <li>
+                <strong>Per extreure informació sobre el parallel coordinates plot y:</strong><br>
+                <a href="https://www.jaspersoft.com/articles/what-is-a-parallel-coordinate-plot#:~:text=A%20parallel%20coordinate%20plot%20is,be%20obscured%20in%20raw%20data" target="_blank">https://www.jaspersoft.com/articles/what-is-a-parallel-coordinate-plot#:~:text=A%20parallel%20coordinate%20plot%20is,be%20obscured%20in%20raw%20data</a>
+            </li>
+            <li>
+                <strong>Dades utilitzades:</strong><br>
+                <a href="https://archive.ics.uci.edu/dataset/45/heart+disease" target="_blank">https://archive.ics.uci.edu/dataset/45/heart+disease</a>
+            </li>
+            <li>
+                <strong>Com a suport per crear el codi:</strong><br>
+                <a href="https://python-graph-gallery.com/treemap" target="_blank">https://python-graph-gallery.com/treemap</a>
+                <div><a href="https://chat.openai.com" target="_blank">ChatGPT</a></div>
+            </li>
+        </ul>
+    </section>  
+
+    <!-- Sección CODI con el código alineado a la derecha -->
+    <section class="codi-section">
+        <h2>CODI</h2>
+        <div class="codi-content">
+            <!-- Aquí va el código Python que solo se mostrará como texto -->
+            <pre>
+df = X.copy()
+df['target'] = y  # Añade la columna de la variable objetivo 'num'
+
+df['target'] = df['target'].apply(lambda x: 'No Disease' if x == 0 else 'Disease')
+
+plt.figure(figsize=(12, 8))
+parallel_coordinates(df, class_column='target', color=['#1f77b4', '#ff7f0e'], alpha=0.5)
+
+plt.title('Parallel Coordinates Plot: Heart Disease Dataset')
+plt.xlabel('Features')
+plt.ylabel('Value Range')
+plt.xticks(rotation=90) 
+plt.grid(True)
+plt.show()
+            </pre>
+        </div>
+    </section>
+</body>
+</html>
