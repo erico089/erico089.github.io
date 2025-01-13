@@ -1,0 +1,458 @@
+/* Margen global del contenido */
+body {
+    margin: 0;
+    font-family: "Montserrat";
+    background-color: #f4f4f4;
+    line-height: 1.6;
+  }
+  
+  
+  .main-wrapper {
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 2rem 0;
+  }
+  
+  /* Estilos para el encabezado */
+  header {
+    text-align: center;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: #8cbef4; /* Fondo azul */
+    color: white; /* Texto blanco para contraste */
+  }
+  
+  header h1 {
+    font-size: 2.5rem; /* Tamaño grande del título */
+    margin: 0; /* Elimina márgenes adicionales del h1 */
+    font-weight: bold; /* Hace el título más destacado */
+  }
+  
+  
+  /* Estilos para el encabezado */
+  .sub-header {
+    text-align: center;
+    margin-top: 15rem;
+    margin-bottom: 5rem;
+    padding: 1rem; /* Reducir el padding para que sea más estrecho */
+    background-color: #52616f;
+    color: white;
+    border-radius: 5px;
+    margin-left: auto; /* Centra el div horizontalmente */
+    margin-right: auto; /* Centra el div horizontalmente */
+    font-size: 0.7rem;
+  }
+
+  .highlighted-text {
+    font-size: 1.2rem; /* Aumenta el tamaño de la fuente */
+    line-height: 1.8; /* Mejora la legibilidad */
+    padding: 1rem; /* Espaciado interno */
+    margin: 1rem 0; /* Espaciado externo */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  .highlighted-text p {
+    margin: 0 0 1rem; /* Espacio entre párrafos */
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  header p {
+    margin: 0.5rem 0 0;
+  }
+  
+  /* Bloques de introducción */
+#intro-blocks {
+  display: flex;
+  gap: 2rem; /* Espacio entre los bloques */
+  width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho disponible */
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  display: flex;
+  flex-direction: row;
+}
+
+.intro-block {
+  padding: 1.5rem;
+  border: 0px solid #ccc;
+  border-radius: 5px;
+}
+
+.l {
+  padding: 1.5rem;
+  width: 40%; /* El bloque 'l' ocupa el 40% */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.r {
+  width: 60%; /* El bloque 'r' ocupa el 60% */
+}
+.r p {
+  font-size: 1.2rem; /* Aumenta el tamaño de la fuente */
+  color: #000000; /* Establece el color negro */
+}
+
+  .resized-image {
+    width: 100%; /* La imagen se ajustará al 100% del ancho del div */
+    height: 100%; /* La imagen se ajustará al 100% del alto del div */
+    object-fit: cover; /* Para que la imagen cubra completamente el div sin distorsionarse */
+}
+  .pie-chart {
+    padding: 0.9rem;
+    width: 20%; /* Ajusta el tamaño para que ambos bloques quepan en la misma línea */
+    vertical-align: top;
+  }
+  
+  .line-chart {
+    padding: 0.9rem;
+    width: 55%; /* Ajusta el tamaño para que ambos bloques quepan en la misma línea */
+  }
+  
+  .portugal-cancel-chart {
+    padding: 0.9rem;
+    width: 80%; 
+  }
+  
+  .portugal-cancel-chart-text {
+    padding: 0.9rem;
+    vertical-align: top;
+    width: 15%; 
+  }
+  
+  .line-chart-text {
+    padding: 0.9rem;
+    vertical-align: top;
+    width: 15%;
+  }
+  
+  .intro-block h2 {
+    margin-bottom: 1rem;
+    color: #2a2e32;
+  }
+  
+  .intro-block p {
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  .poblation-chart {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+  }
+  
+  .poblation-chart-text {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 1.5rem;
+  }
+  /* Estilos para el pie de página */
+  footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #2a2e32;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .analysis-container {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+  }
+  
+  .analysis-container h2 {
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .analysis-container p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  
+  .analysis-container .highlight {
+    color: #e76934;
+    font-weight: bold;
+  }
+  
+  .analysis-container ul {
+    margin-top: 10px;
+    padding-left: 20px;
+    color: #555;
+    font-size: 16px;
+  }
+  
+  .analysis-container ul li {
+    margin-bottom: 5px;
+  }
+  
+  .conclusio-final-text {
+    margin: 8rem;
+    text-align: center;
+  }
+
+  /* Segunda página */
+.second-page {
+  display: flex;
+  flex-direction: row; /* Alinea los bloques uno debajo del otro */
+  margin-top: 4rem; /* Espaciado con la primera página */
+  height: 90vh; /* Ocupa toda la altura de la pantalla */
+  gap: 1rem; /* Espaciado entre el bloque superior y los inferiores */
+}
+
+.large-block {
+  width: 70%;
+  height: 90%; /* Ocupa el 60% de la altura disponible */
+  background-color: #e4e4e4;
+  padding: 1.5rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+.large-block .flourish-embed {
+  width: 100%;
+}
+
+/* Contenedor de los bloques pequeños */
+.small-blocks {
+  display: flex;
+  height: 100%; /* Ocupa la otra mitad de la pantalla */
+  gap: 1rem; /* Espaciado entre los bloques */
+  width: 30%;
+  flex-direction: column;
+}
+
+/* Bloques pequeños */
+.small-block {
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Bloque izquierdo (70%) */
+.small-block.left {
+  height: 28%;
+  padding-bottom: 0;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+/* Bloque derecho (30%) */
+.small-block.right {
+  height: 70%;
+}
+
+.third-page {
+  display: flex;
+  flex-direction: row; /* Alinea los bloques uno debajo del otro */
+  margin-top: 4rem; /* Espaciado con la primera página */
+  height: 90vh; /* Ocupa toda la altura de la pantalla */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  gap: 1rem; /* Espaciado entre el bloque superior y los inferiores */
+}
+
+.large-block-height {
+  height: 90%; /* Ocupa la mitad de la altura */
+  background-color: #e4e4e4;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  border-radius: 5px;
+  width: 60%;
+}
+
+.large-block-height .flourish-embed {
+  width: 100%;
+}
+
+/* Contenedor de los bloques pequeños */
+.small-blocks-height {
+  display: flex;
+  height: 100%; /* Ocupa la otra mitad de la pantalla */
+  gap: 1rem; /* Espaciado entre los bloques */
+  width: 40%;
+  flex-direction: column;
+}
+
+/* Bloques pequeños */
+.small-block-height {
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; /* Centra verticalmente el contenido */
+}
+
+/* Bloque izquierdo (70%) */
+.small-block-height.up {
+  flex-direction: column;
+  height: 60%;
+  margin-top: 10%;
+}
+
+/* Bloque derecho (30%) */
+.small-block-height.down {
+  height: 30%;
+  width: 90%;
+}
+
+/* Cuarta página */
+.fourth-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Espaciado entre bloques */
+  height: 90vh; /* Ocupa toda la altura de la pantalla */
+  margin-top: 4rem; /* Separación con la página anterior */
+}
+
+/* Bloque grande */
+.big-block {
+  display: flex;
+  height: 65%; /* Ocupa el 60% de la altura de la pantalla */
+  gap: 1rem; /* Espaciado entre los subbloques */
+  flex-direction: row;
+  justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+/* Subbloques del bloque grande */
+.big-subblock {
+  width: 45%; /* Cada subbloque ocupa la mitad del ancho */
+  background-color: #e4e4e4;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+/* Contenedor de los tres bloques pequeños */
+.three-small-blocks {
+  display: flex;
+  height: 35%; /* Ocupa el 40% de la altura de la pantalla */
+  gap: 1rem; /* Espaciado entre los bloques */
+}
+
+/* Bloques pequeños */
+.small-block-b {
+  width: 30%; /* Ancho igual dividido entre 3 con ajuste por el gap */
+  background-color: #fff;
+  display: flex;
+  border-radius: 5px;
+  padding: 1rem;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  flex-direction: column;
+}
+
+.small-block-m {
+  width: 38%; /* Ancho igual dividido entre 3 con ajuste por el gap */
+  background-color: #fff;
+  display: flex;
+  border-radius: 5px;
+  padding: 1rem;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+.highlight {
+  font-weight: bold;
+  font-size: 1.2rem; /* Aumenta el tamaño de la fuente para que resalte más */
+}
+
+.negative {
+  color: red;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+
+#conclusion-section {
+  margin-top: 15rem; /* Espacio superior para separar la sección */
+  padding: 2rem; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  margin-bottom: 15rem;
+}
+
+#conclusion-section h2 {
+  font-size: 2rem; /* Tamaño del título */
+  margin-bottom: 1rem; /* Espaciado inferior */
+  text-align: center; /* Centra el título */
+}
+
+.conclusion-content {
+  display: flex; /* Flexbox para alinear texto e imagen */
+  align-items: flex-start; /* Alinea verticalmente los elementos al inicio */
+  gap: 2rem; /* Espacio entre el texto y la imagen */
+  
+}
+
+.conclusion-content p {
+  font-size: 1.2rem; /* Tamaño del texto */
+  line-height: 1.8; /* Mejora la legibilidad */
+  flex: 1; /* El texto ocupa el espacio restante */
+}
+
+.conclusion-text {
+  flex-direction: column;
+}
+
+.conclusion-content img {
+  flex: 0 0 30%; /* La imagen ocupa el 30% del ancho del contenedor */
+  max-width: 30%; /* Asegura que no supere el 30% del ancho */
+  height: auto; /* Mantiene las proporciones de la imagen */
+  border-radius: 5px; /* Bordes redondeados para la imagen */
+  border: 1px solid #ccc;
+}
+
+#references-section {
+  margin-top: 3rem; /* Espacio superior para separar la sección */
+  padding: 2rem; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+#references-section h2 {
+  font-size: 2rem; /* Tamaño del título */
+  margin-bottom: 1rem; /* Espaciado inferior */
+  text-align: center; /* Centra el título */
+}
+
+.references-list {
+  list-style-type: none; /* Elimina las viñetas de la lista */
+  padding: 0; /* Elimina el relleno interno de la lista */
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 30%;
+}
+
+.references-list li {
+  margin-bottom: 1rem; /* Espacio entre los elementos de la lista */
+  font-size: 1.1rem; /* Tamaño de fuente ligeramente mayor */
+  line-height: 1.6; /* Mejora la legibilidad */
+}
+
+.references-list a {
+  color: #007BFF; /* Color azul para los enlaces */
+  text-decoration: none; /* Elimina el subrayado */
+}
+
+.references-list a:hover {
+  text-decoration: underline; /* Subraya al pasar el cursor */
+}
