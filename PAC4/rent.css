@@ -223,6 +223,29 @@ body {
   justify-content: center; /* Centra horizontalmente el contenido */
 }
 
+.large-block-map {
+  width: 50%;
+  height: 100%; /* Ocupa el 90% de la altura disponible */
+  background-color: #e4e4e4;
+  padding: 0;
+  border-radius: 5px;
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  box-sizing: border-box; /* Incluye el padding dentro del tamaño total */
+}
+
+.large-block-map .flourish-embed {
+  width: 100%;
+  height: 100%; /* Se ajusta al contenedor */
+  display: block; /* Asegura que se respete el contenedor */
+  aspect-ratio: 16 / 9; /* Mantiene una relación de aspecto adecuada */
+  max-width: 100%; /* Evita que exceda el ancho del contenedor */
+  max-height: 100%; /* Evita que exceda la altura del contenedor */
+  object-fit: contain; /* Ajusta el contenido para que se adapte perfectamente */
+}
+
+
+
 .large-block .flourish-embed {
   width: 100%;
 }
@@ -385,10 +408,10 @@ body {
 
 
 #conclusion-section {
-  margin-top: 15rem; /* Espacio superior para separar la sección */
+  margin-top: 10rem; /* Espacio superior para separar la sección */
   padding: 2rem; /* Espaciado interno */
   border-radius: 5px; /* Bordes redondeados */
-  margin-bottom: 15rem;
+  margin-bottom: 20rem;
 }
 
 #conclusion-section h2 {
@@ -439,7 +462,7 @@ body {
   padding: 0; /* Elimina el relleno interno de la lista */
   padding-left: 20%;
   padding-right: 20%;
-  padding-bottom: 30%;
+  padding-bottom: 15%;
 }
 
 .references-list li {
@@ -455,4 +478,34 @@ body {
 
 .references-list a:hover {
   text-decoration: underline; /* Subraya al pasar el cursor */
+}
+
+.sticky-button {
+  position: sticky;
+  bottom: 20px; /* Distancia desde la parte superior del viewport */
+  background-color: #969899;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000; /* Asegura que quede encima de otros elementos */
+  margin-left: 2%;
+}
+
+.sticky-button:hover {
+  background-color: #adb0b1;
+}
+
+.sticky-button-back {
+  position: sticky;
+  top: 20px; /* Distancia desde la parte superior del viewport */
+  background-color: #969899;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000; /* Asegura que quede encima de otros elementos */
+  margin-left: 2%;
 }

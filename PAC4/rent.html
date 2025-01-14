@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="rent.css">
 </head>
 <body>
-  <!-- Primera página -->
+  <div>
+    <button class="sticky-button-back" id="scrollButtonBack">Enrere</button>
+    <!-- Primera página -->
   <div class="main-wrapper">
     <header>
       <h1>El cost de viure: Preus del lloguer i salaris a Barcelona</h1>
@@ -29,7 +31,6 @@
       </div>
     </div>
   </div>
-
   <!-- Segunda página -->
   <div class="main-wrapper second-page">
     <!-- Bloque grande en la parte superior -->
@@ -98,7 +99,31 @@
         <p>Encara aixi, la seva idea de viure a Barcelona no es buscar un pis petit i amb un preu per sobre de lo llogic.</p>
       </div>
     </div>
+  </div>
+    <!-- cinquena página -->
+  <div class="main-wrapper third-page">
+    <!-- Bloque grande en la parte superior -->
+    
+    <!-- Bloques pequeños en la parte inferior -->
+    <div class="small-blocks-height">
+      <div class="small-block-height up">
+        <p>En Joan fa un experiment, <span class="highlight">suposant que el seu sou es de 1000 euros nets al mes</span>, calcula el que li quedaria després de pagar el lloguer a cada barri de Barcelona (lloguer mig del barri).</p>
+        <p>Observem que la majoria de casos, el balanç queda negatiu, descartant completament aquests barris.</p>
+        <p>Per anar bé, mensualment gastem uns 250-350 euros en menjar, sumant oci, i altres gastos com aigua, electricitat, internet... .<span class="negative">Concluim cap barri una opció realista per poder llogar.</span></p>
+        <p>Per tant, <span class="highlight">fins que el sou d'en Joan no s'incrementi considerablement, no arribara a poder viure a Barcelona.</span></p>
+      </div>
+      <div class="small-block-height down">
+        <img src="./joan_pg6.png" class="resized-image">      
+      </div>
+    </div>
 
+    <div class="large-block-map">
+      <div class="flourish-embed" data-src="story/2822742"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/story/2822742/thumbnail" width="100%" alt="visualization" /></noscript></div>
+    </div>
+
+  </div> 
+
+  <div class="main-wrapper fourth-page">
     <!-- Conclusió -->
     <div id="conclusion-section">
       <h2>Conclusió</h2>
@@ -113,7 +138,6 @@
       </div>
     </div>
     
-
     <div id="references-section">
       <h2>Referències i Bibliografia</h2>
       <ul class="references-list">
@@ -150,9 +174,69 @@
     </div>
     
   </div>
-  
-  
+  <button class="sticky-button" id="scrollButton">Següent</button>
+  </div>
+  <script>
+    const totalParts = 7; // Total de partes
 
-  <button class="fixed-button">Menú</button>
+    const forwardButton = document.getElementById('scrollButton');
+    const backButton = document.getElementById('scrollButtonBack');
+
+    // Mostrar u ocultar el botón de retroceso según la sección
+    const toggleBackButton = (currentPart) => {
+      if (currentPart <= 1) {
+        backButton.style.display = 'none'; // Ocultar en la primera sección
+      } else {
+        backButton.style.display = 'block'; // Mostrar en las demás
+      }
+    };
+
+    // Obtener la sección actual con más precisión
+    const getCurrentPart = (scrollPosition, sectionHeight) => {
+      const part = Math.round(scrollPosition / sectionHeight);
+      return Math.min(Math.max(part, 0), totalParts - 1) + 1; // Asegurarse de que está en rango
+    };
+
+    forwardButton.addEventListener('click', function () {
+      const totalHeight = document.documentElement.scrollHeight;
+      const sectionHeight = totalHeight / totalParts;
+
+      // Calcular la sección actual
+      const currentScroll = window.scrollY;
+      const currentPart = getCurrentPart(currentScroll, sectionHeight);
+
+      if (currentPart < totalParts) {
+        const nextScroll = sectionHeight * currentPart;
+        window.scrollTo({
+          top: nextScroll,
+          behavior: 'smooth'
+        });
+        toggleBackButton(currentPart + 1); // Ajustar visibilidad del botón de retroceso
+      } else {
+        alert("Ya estás en la última sección.");
+      }
+    });
+
+    backButton.addEventListener('click', function () {
+      const totalHeight = document.documentElement.scrollHeight;
+      const sectionHeight = totalHeight / totalParts;
+
+      // Calcular la sección actual
+      const currentScroll = window.scrollY;
+      const currentPart = getCurrentPart(currentScroll, sectionHeight);
+
+      if (currentPart > 1) {
+        const previousScroll = sectionHeight * (currentPart - 2);
+        window.scrollTo({
+          top: previousScroll,
+          behavior: 'smooth'
+        });
+        toggleBackButton(currentPart - 1); // Ajustar visibilidad del botón de retroceso
+      }
+    });
+
+    // Inicializar visibilidad del botón de retroceso
+    toggleBackButton(1);
+  </script>
 </body>
 </html>
